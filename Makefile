@@ -1,3 +1,7 @@
+build:
+	@docker-compose up -d
+	@make migrate
+
 ps:
 	@docker-compose ps
 
