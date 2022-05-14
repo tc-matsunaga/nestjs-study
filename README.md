@@ -3,9 +3,8 @@
 ## 環境構築
 
 ```
-1. make build
-2. コンソールが止まった後適当なファイルを保存してhot reloadをさせる
+make build
 ```
-[ここにアクセスして空のarrayが表示されれば完了です](http://localhost:3000/user)
+[consoleが止まった後ここにアクセスして空のarrayが表示されれば完了です](http://localhost:3000/user)
 
 サンプルコードとしてuserのCRUDを実装しています

@@ -1,13 +1,15 @@
 build:
-	@docker-compose up -d
-	@make migrate
+	@docker-compose build
+	@docker-compose up -d mysql
+	@docker-compose run --rm api npm i && npm run build
+	@docker-compose run --rm api npm run migration:run
+	@make up
 
 ps:
 	@docker-compose ps
 
 up:
 	@docker-compose up
-	@make ps
 
 stop:
 	@docker-compose stop
@@ -19,5 +21,5 @@ g-migration-%:
 migrate:
 	@docker-compose exec api npm run typeorm migration:run
 
-migrate-revert:
+migration-revert:
 	@docker-compose exec api npm run migration:revert
